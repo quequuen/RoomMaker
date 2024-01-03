@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+
+#findIdWrap{
+	width: 450px;
+	height: 300px;
+}
+
+.findLogo{
+	margin-left: 10px;
+	width: 200px;
+	float: left;
+}
+
+h2{
+	margin-left: 250px;
+}
+
+.findId_content{
+	margin-top:50px;
+	width: 450px;
+	height: 150px;
+}
+
+.select_way{
+	margin-left: 60px;
+	margin-bottom: 10px;
+}
+
+input[type=text]{
+	width: 250px;
+	height: 25px;
+	margin-bottom: 10px;
+	margin-left: 60px;
+}
+
+input[type="button"]{
+	color: black;
+	font-weight: bold;
+	background-color: skyblue;
+	width: 80px;
+	height: 30px;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+input[type="button"]:hover{
+	color: skyblue;
+	background-color: white;
+	border : 2px solid skyblue;
+}
+
+.findId{
+	margin-left: 80px;
+	float: left;
+}
+
+.cancle{
+	margin-left: 50px;
+}
+
+.result{
+	margin-left: 60px;
+}
+
+.input_wrap{
+	width: 450px;
+	height: 50px;
+	position: reletive;
+}
+
+.email_div{
+	width: 450px;
+	height: 50px;
+	position: absolute;
+	z-index: 1;
+}
+
+.phone_div{
+	width: 450px;
+	height: 50px;
+	position: absolute;
+}
+
+

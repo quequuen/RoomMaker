@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+ a{
+ text-decoration: none;
+ }
+  
+#fileUpload_form{
+	width: 870px;
+    height: 740px;
+    font-size: 18px;
+    padding: 0;
+    display: block;
+}
+
+.fileUpload_wrap{
+	width: 100%;
+	height: 100%;
+}
+  
+.fileUploadTitle{
+	margin-top: 25px;
+	width: 100%;
+	height: 50px;
+}
+
+.fileUploadTitle img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.fileUploadTitle span{
+	margin: 0;
+	margin-left: 70px;
+	width: 650px;
+	height: 50px;
+	font-size: 2em;
+	line-height: 50px;
+	font-weight: bold;
+	display: block;
+}
+
+.fileUpload_title{
+	width: 870px;
+	height: 50px;
+	margin-top: 50px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.fileUpload_title .span{
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.filetitle{
+	border: 2px solid skyblue;
+	border-radius: 7px;
+	width: 690px;
+	height: 35px;
+	margin-left: 100px;
+}
+
+.fileUpload_div{
+	width: 870px;
+	height: 50px;
+	border-bottom: 1px solid black;
+}
+
+.fileUpload_div .span{
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.uploadFile{
+	margin-left: 85px;
+}
+
+.fileUpload_content{
+	width: 870px;
+	height: 150px;
+	border-bottom: 1px solid black;
+}
+
+.fileUpload_content .span{
+	height: 50px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.content{
+	margin-left: 115px;
+	margin-top: 15px;
+	width: 690px;
+	height: 115px;
+	resize: none;
+	border: 2px solid skyblue;
+	border-radius: 7px;
+}
+
+.fileUploadButtons{
+	width: 200px;
+	height: 50px;
+	margin-left: 670px;
+	margin-top: 15px;
+}
+
+.filebutton{
+	width: 100px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: skyblue;
+	color: black;
+	font-weight: bold;
+	border-radius: 7px;
+}
+
+.filebutton:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}
+
+#resetbutton{
+	width: 50px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: skyblue;
+	color: black;
+	font-weight: bold;
+	border-radius: 7px;
+	margin-left: 20px;
+}
+
+#resetbutton:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}
+

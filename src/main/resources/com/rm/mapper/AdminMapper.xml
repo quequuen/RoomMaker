@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.rm.mapper.AdminMapper">
+  
+  <select id="getRoomList" resultType="com.rm.model.RoomVO">
+  	select * from room r1 join roomdetail r2 on r1.roomcode = r2.roomcode join room_image r3 on r1.roomcode = r3.roomcode
+  </select>
+  
+  <select id="getMemberList" resultType="com.rm.model.MemberVO">
+  	select * from member where memberlevel != 1;
+  </select>
+  
+  <select id="getDeleteMemberList" resultType="com.rm.model.MemberVO">
+  	select * from member where id = #{id}
+  </select>
+  
+  <delete id="deleteMemberDo">
+  	delete from member where id=#{id}
+  </delete>
+  
+  <select id="getRoomInfList" resultType="com.rm.model.RoomVO">
+	select r1.roomcode,type,id,title,roompw,member_cnt,join_member_cnt,explanation,fileName,uploadPath,uuid from (room r1 join roomdetail r2 on r1.roomcode = r2.roomcode) join room_image r3 on r1.roomcode = r3.roomcode where r1.roomcode = #{roomcode} 
+  </select>
+  
+  <select id="getRoomFileList" resultType="com.rm.model.FileVO">
+  	select * from file f1 join filedetail f2 on f1.filecode = f2.filecode where f1.roomcode = #{roomcode}
+  </select>
+  
+  <select id="getRoomMemberList" resultType="com.rm.model.RoomMemberVO">
+  	select * from roommember where roomcode = #{roomcode}
+  </select>
+  
+  <delete id="deleteRoomMemberList">
+  	delete from roommember where roomcode = #{param1} and id = #{param2}
+  </delete>
+  
+
+	<update id="DownMemberCnt">
+		update roomdetail set join_member_cnt = (join_member_cnt - 1) where roomcode = #{param1}
+	</update>
+
+	<delete id="deleteFileList">
+		delete from file where roomcode=#{param1} and filecode=#{param2}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from room where roomcode=#{roomcode}
+	</delete>
+	
+	<select id="getNoticeList" resultType="com.rm.model.NoticeVO">
+		select * from notice where roomcode=#{roomcode}
+	</select>
+	
+	<delete id="deleteNoticeList">
+		delete from notice where roomcode=#{param1} and noticecode=#{param2}
+	</delete>
+
+  	<select id="getQuestionList" resultType="com.rm.model.QuestionVO">
+  		select * from question where roomcode=#{roomcode}
+  	</select>
+  	
+  	<delete id="deleteQuestionList">
+  		delete from question where roomcode=#{param1} and questioncode=#{param2}
+  	</delete>
+  	
+  	<select id="roomAnswerList" resultType="com.rm.model.QuestionVO">
+  		select * from answer where questioncode = #{questioncode}
+  	</select>
+  
+  	<delete id="deleteAnswerList">
+  		delete from answer where roomcode=#{param1} and answer=#{param2}
+  	</delete>
+  
+  </mapper>

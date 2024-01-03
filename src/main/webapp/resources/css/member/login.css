@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+* {
+	magin: 0 auto;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	background-image:url('../resources/images/loginback.jpeg'); 
+	background-size: cover;
+}
+
+a{
+	text-decoration: none;
+}
+
+#login_wrap {
+	position: absolute;
+	width: 90%;
+	height: 100%;
+	left: 33%;
+}
+
+.login_logo{
+	margin-top: 100px; 
+	margin-left: 100px;
+	width: 400px;
+	height: 100px;
+}
+
+.login_logo img{
+	width: 300px;
+}
+
+.login_content{
+	border: 2px solid black;
+	border-radius: 15px;
+	width: 500px;
+	height: 400px;
+}
+
+.login_div{
+	border: 2px solid black;
+	border-radius: 15px;
+	margin-top: 50px;
+	margin-left: 50px;
+	width: 400px;
+	height: 120px;
+	display: block;
+}
+
+.login_div input{
+	margin-left: 50px;
+	width: 300px;
+	height: 60px;
+	font-size: 1.3em;
+	border: none;
+	outline: none;
+}
+
+.login_button{
+	margin-top: 50px;
+	margin-left: 50px;
+	width: 400px;
+	height: 60px;
+	border-radius: 13px;
+	background-color: skyblue;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: white;
+}
+
+.login_button:hover{
+	border: 2px solid skyblue;
+	background-color: white;
+	color: skyblue;
+}
+
+.a_div{
+	margin-top: 10px;
+	margin-left: 50px;
+	width: 400px;
+	height: 30px;
+	display: block;
+	text-align: center;
+}
+
+.a_div a{
+	color: black;
+	margin-right: 5px;
+}
+

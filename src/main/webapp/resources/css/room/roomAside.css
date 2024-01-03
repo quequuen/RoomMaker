@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+aside{
+    width: 30%;
+    height: 500px;
+    float: left;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.aside_function{
+    display: grid;
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 60%;
+}
+.room_function{
+   font-family: 'Cafe24SsurroundAir'; 
+   margin-top:30px;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: black;
+    background:aliceblue;
+    font-size: 20px;
+    padding: 10px 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    border-radius: 10px;
+}
+
+.room_out{
+   margin-top:35px;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    background:#1ab8be;
+    font-size: 20px;
+    padding: 10px 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    border-radius: 10px;
+}
+
+section{
+   font-family: 'Cafe24SsurroundAir';
+   
+}

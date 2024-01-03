@@ -1,0 +1,141 @@
+@charset "UTF-8";
+ 
+ #fileDetailWrap{
+ width: 870px;
+ height: 500px;
+ }
+
+  
+.fileDetailTitle{
+	margin-top: 25px;
+	width: 870px;
+	height: 50px;
+}
+
+.fileDetailTitle img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.fileDetailTitle span{
+	margin: 0;
+	margin-left: 80px;
+	width: 400px;
+	height: 50px;
+	font-size: 2em;
+	line-height: 50px;
+	font-weight: bold;
+	display: block;
+}
+
+.fileDetail_title{
+	width: 870px;
+	height: 40px;
+	margin-top: 25px;
+	border-top: 2px solid black;
+}
+
+.fileDetail_title span{
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.fileDetail_title_sec{
+	margin-left: 20px;
+}
+
+.fileDetail_member{
+	width: 870px;
+	height: 30px;
+	line-height: 40px;
+	font-size: 1.1em;
+}
+
+.fileDetail_uploaddate{
+	width: 870px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 1em;
+	color: gray;
+	border-bottom: 2px solid black;
+}
+
+.fileDetail_fileName{
+	width: 870px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1em;
+	border-bottom: 2px solid black;
+}
+
+.fileDetail_fileName_span{
+	width: 670px;
+}
+
+.filedownload{
+	margin-left: 200px;
+	width: 100px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: skyblue;
+	color: black;
+	font-weight: bold;
+	border-radius: 7px;
+}
+
+.filedownload:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}
+
+.fileDetail_content{
+	width: 870px;
+	height: 150px;
+	line-height: 50px;
+	font-size: 1em;
+	border-bottom: 2px solid black;
+}
+
+
+.buttons{
+	margin-top: 15px;
+	margin-left: 300px;
+	
+}
+
+#deletebutton{
+	width: 50px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: skyblue;
+	color: black;
+	font-weight: bold;
+	border-radius: 7px;
+	margin-left: 15px;
+}
+
+#deletebutton:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}
+
+#modifybutton{
+	width: 50px;
+	height: 30px;
+	border: 2px solid black;
+	background-color: skyblue;
+	color: black;
+	font-weight: bold;
+	border-radius: 7px;
+	margin-left: 15px;
+}
+
+#modifybutton:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}

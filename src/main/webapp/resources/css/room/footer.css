@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+footer{
+	width: 1720px;
+	height: 300px;
+	margin-left:-10px;
+	background-color: skyblue;
+	margin-bottom: -10px;
+}
+.footer_wrap{
+	position: relative;
+    box-sizing: border-box;
+    min-height: 102px;
+    margin: 0 auto;
+    padding: 64px 64px 94px;
+    text-align: left;
+    color: white;
+    font-size: 12px;
+}
+.ft_bx_lt{
+	position: relative;
+    float: left;
+    margin-left:180px;
+    text-align: left;
+}
+
+.ft_bx_ct{
+	margin-bottom: 34px;
+}
+
+.blind{
+	font-size: 32px;
+}
+
+.ft_bx_policy{
+	padding-top: 100px;
+	padding-left: 600px;
+    font-size: 12px;
+}
+
+.ft_bx_policy span{
+	display: inline-block;
+    padding: 0 10px;
+    color: white;
+}

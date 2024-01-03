@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+html{
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 400px;
+}
+button{
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 400px;
+}
+html{
+    font-family: 'Cafe24Ssurround';
+   
+}
+button{
+    font-family: 'Cafe24Ssurround';
+  
+} */
+
+  section{
+    width: 100%;
+    height: 800px;
+  }
+  
+  .clear{
+    clear: both;
+}
+  
+  #main_room{
+    border: 5px solid skyblue ;
+    width: 80%;
+    height: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    
+  }
+  #main_room .main_room_top{
+    width: 90%;
+    height: 15%;
+    margin: 0 auto;
+  }
+  #main_room .main_room_section{
+    width: 90%;
+    height: 80%;
+    border: 1px solid black;
+    margin: 0 auto;
+    top: 50px;
+    border-radius: 10px;
+  }
+
+  #main_room .main_room_section .many_room{
+    margin-top: 10px;
+    width: 45%;
+    margin-left: 25px;
+    margin-right: 20px;
+    height: 30%;
+    border: 1px solid black;
+    float: left;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  
+/* .many_room >a{
+  background-color: black;
+  } */
+  
+  #main_room .main_room_section .many_room .room_info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  #main_room .main_room_section .many_room .room_info .room_icon{
+    margin: 15px;
+    width: 24%;
+    height: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+.room_title{
+    width: 60%;
+    height: 80%;
+    border: 1px solid black;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+.room_number{
+    height: 40%;
+    border: 1px solid black;
+    margin: 10px;
+    margin-right: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    padding: 0px 20px;
+    align-items: center;
+    border-radius: 10px;
+  }
+.room_sub_title{
+    height: 40%;
+    margin: 10px;
+    margin-right: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+  .section_footer{
+    text-align: center;
+  }
+  .room_name{
+    margin-left: 30px;
+    width: 20%;
+  }
+
+  .people_icon{
+    width: 37px;
+    height: 30px;
+    background: url(../images/people.png) no-repeat;
+    background-size: contain;
+  }
+
+  .room_button{
+  border: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 10px;
+  margin-top: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+  border-radius: 10px;
+  }
+
+  .room_button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+    border-radius: 10px;
+  }
+
+  .room_button:hover::after{
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    border-radius: 10px;
+}
+  .room_button>span{
+    position: relative; 
+    z-index: 1;
+  }
+  /* .btn1{
+  	text-decoration : "none";
+    margin-top: 30px;
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+    border: none;
+    width: 80px;
+    height: 30px;
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 400px;
+}
+  .btn2{
+  	text-decoration : "none";
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+    border: none;
+    width: 80px;
+    height: 30px;
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 400px;
+} */
+
+.before{
+	margin: 10px;
+	text-decoration : none;
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+    color: white;
+    border: none;
+    width: 100px;
+    height: 50px;
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 200px;
+    padding : 5px;
+	
+}
+
+.next{
+	margin: 10px;
+	text-decoration : none;
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+    color: white;
+    border: none;
+    width: 100px;
+    height: 50px;
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 200px;
+	padding : 5px;
+}

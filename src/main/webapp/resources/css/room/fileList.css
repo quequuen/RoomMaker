@@ -1,0 +1,112 @@
+@charset "UTF-8";
+  
+ a{
+ text-decoration: none;
+ color: black;
+ }
+
+.questionUploadTitle{
+	margin-top: 25px;
+	width: 870px;
+	height: 50px;
+}
+
+.fileUploadTitle img{
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.fileUploadTitle span{
+	margin: 0;
+	width: 400px;
+	height: 50px;
+	font-size: 2em;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.fileUploadGo_div{
+	margin-left: 750px;
+	width: 60px;
+	height: 50px;
+}
+
+.fileUploadGo{
+	width: 70px;
+	height: 35px;
+	border: 2px solid black;
+	background-color: skyblue;
+	color: black;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.fileUploadGo:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}
+
+table{
+	margin: 0;
+	margin-top: 10px;
+	border-collapse: collapse;
+}
+
+th{
+	margin: 0;
+	border: 2px solid black;
+	background-color: skyblue; 
+	height: 35px;
+}
+
+td{
+	margin: 0;
+	border: 2px solid black;
+	background-color: white; 
+	height: 35px;
+	text-align: center;
+}
+
+.filetitlea:hover{
+	font-weight: bold;
+}
+
+.before{
+	margin: 10px;
+	text-decoration : none;
+    color: black;
+    border: none;
+    width: 100px;
+    height: 50px;
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: bold;
+    padding : 5px;
+}
+
+.before:hover{
+	color: skyblue;
+}
+
+.next{
+	margin: 10px;
+	text-decoration : none;
+    color: black;
+    border: none;
+    width: 100px;
+    height: 50px;
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: bold;
+	padding : 5px;
+}
+
+.next:hover{
+	color: skyblue;
+}
+
+
+
+
+
+

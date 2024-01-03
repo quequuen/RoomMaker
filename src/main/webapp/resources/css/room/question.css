@@ -1,0 +1,101 @@
+   a{
+  	text-decoration : none;
+  	color: black;
+  }
+  .questionUploadTitle{
+  	margin-top: 25px;
+  	width: 870px;
+  	height: 50px;
+  }
+  
+  .questionUploadTitle span{
+  	margin: 0;
+  	width: 400px;
+  	height: 50px;
+  	font-size: 2em;
+  	line-height: 50px;
+  	font-weight: bold;
+  }
+ .questionUploadGo_div{
+ 	margin-left: 750px;
+ 	width: 60px;
+ 	height: 50px;
+ }
+ 
+ .questionUploadGo{
+ 	width: 70px;
+ 	height: 35px;
+ 	border: 2px solid black;
+ 	background-color: skyblue;
+ 	color: black;
+ 	font-weight: bold;
+ 	border-radius: 10px;
+ }
+
+.questionUploadGo:hover{
+	background-color: white;
+	color: skyblue;
+	border: 2px solid skyblue;
+}
+ 
+ 
+  
+  table{
+ 	border-collapse: collapse;
+ 	width: 1000px;    
+ 	margin-top : 20px;
+ 	text-align: center;
+  }
+  td, th{
+  	border : 1px solid black;
+  	height: 50px;
+  }
+  th{
+  	font-size : 17px;
+  }
+  thead{
+  	font-weight: 700;
+  }
+  .table_wrap{
+/*   	margin : 50px 0 0 50px; */
+  	position: absolute;
+  	
+  }
+  .bno_width{
+  	width: 12%;
+  }
+  .writer_width{
+  	width: 20%;
+  }
+  .regdate_width{
+  	width: 15%;
+  }
+  .updatedate_width{
+  	width: 15%;
+  }
+  .top_btn{
+  	font-size: 20px;
+    padding: 6px 12px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    font-weight: 600;
+  }
+  
+.	button_Ai{
+    width: 50px;
+    height: 30px;
+    /* border: 1px solid black; */
+    /* background-color: skyblue; */
+    color: black;
+    font-weight: bold;
+    border-radius: 7px;
+    margin-left: 15px;
+    border: none;
+}
+  .button_Ai:hover{
+  	background-color: white;
+  	color: skyblue;
+  	border: 2px solid skyblue;
+  }
+  
+  

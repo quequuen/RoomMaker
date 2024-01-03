@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/rm/controller/MemberController.java=UTF-8
+encoding//src/main/java/com/rm/controller/MypageController.java=UTF-8
+encoding//src/main/java/com/rm/controller/RoomController.java=UTF-8
+encoding//src/main/java/com/rm/mapper/MemberMapper.java=UTF-8
+encoding//src/main/java/com/rm/mapper/RoomMapper.java=UTF-8
+encoding//src/main/java/com/rm/service/MemberService.java=UTF-8
+encoding//src/main/java/com/rm/service/RoomService.java=UTF-8
+encoding//src/main/java/com/rm/service/RoomServiceImpl.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/admin_main.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/mypage/modify.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/room/fileList.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/room/fileUpload.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/room/roomAIQuestion.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/room/roomSchedule.jsp=UTF-8

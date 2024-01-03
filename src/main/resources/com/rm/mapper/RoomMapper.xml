@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rm.mapper.RoomMapper">
+
+
+<insert id="makeRoom">
+
+	insert into room(type,id) values(#{type},#{id})
+</insert>
+
+<select id="findRoomCode" resultType="int">
+	select max(roomcode) from room
+</select>
+
+<insert id="makeRoomDetail">
+	insert into roomdetail values(#{roomcode},#{title}, #{roompw}, #{member_cnt},#{join_member_cnt}, #{explanation}) 
+</insert>
+
+
+<!-- 이미지 등록 -->
+	<insert id="imageEnroll">
+	
+		insert into room_image(roomcode, fileName, uploadPath, uuid) values (#{roomcode}, #{fileName}, #{uploadPath}, #{uuid})
+	
+	</insert>
+	
+	<!-- 방 목록 -->
+	<select id="getRoomList" resultType="com.rm.model.RoomVO">
+		select r1.roomcode,type,id,title,roompw,member_cnt,join_member_cnt,explanation,fileName,uploadPath,uuid from (room r1 join roomdetail r2 on r1.roomcode = r2.roomcode) join room_image r3 on r1.roomcode = r3.roomcode order by roomcode desc
+	</select>
+	
+	<!-- 방 조회  -->
+	<select id="getRoomDetail" resultType="com.rm.model.RoomVO">
+				select r1.roomcode,type,id,title,roompw,member_cnt,join_member_cnt,explanation,fileName,uploadPath,uuid from (room r1 join roomdetail r2 on r1.roomcode = r2.roomcode) join room_image r3 on r1.roomcode = r3.roomcode where r1.roomcode = #{roomcode} 
+	</select>
+	
+	<!-- 방 갯수 출력 -->
+	<select id="countRoom" resultType="int">
+		select count(*) from room r1 join roomdetail r2 on r1.roomcode = r2.roomcode
+		
+		<if test="keyword != null">
+			where title like concat('%',#{keyword},'%')
+		</if>
+	</select>
+	
+	<!-- 페이징 처리 후 방 조회 -->
+	<select id="selectRoom" resultType = "com.rm.model.RoomVO">
+		
+		SELECT *
+		FROM (
+		    SELECT 
+		        ROW_NUMBER() OVER (ORDER BY roomcode DESC) AS rn,
+		        r1.roomcode,
+		        type,
+		        id,
+		        title,
+		        roompw,
+		        member_cnt,
+		        join_member_cnt,
+		        explanation,
+		        fileName,
+		        uploadPath,
+		        uuid
+		    FROM room r1
+		    JOIN roomdetail r2 ON r1.roomcode = r2.roomcode
+		    JOIN room_image r3 ON r1.roomcode = r3.roomcode
+		    <if test="keyword != null">
+		    	where title like concat('%',#{keyword},'%')
+		    </if>
+		    ORDER BY roomcode DESC
+		) AS b
+		WHERE rn BETWEEN #{start} AND #{end};
+		
+	</select>
+	
+	<!-- 자료리스트의 수 -->
+	<select id="countFile" resultType="int">
+		select count(*) from file where roomcode = #{roomcode}
+	</select>
+	
+	<!-- 자료리스트에 뿌릴 정보 올리기 -->
+	<insert id="uploadFile">
+		insert into file(roomcode, filetitle, fileuploaddate, filemember) values(#{roomcode},#{filetitle}, sysdate() ,#{filemember})
+	</insert>
+	
+	<!-- filecode 가져오기 -->
+	<select id="selectFileCode" resultType="int">
+		select max(filecode) from file
+	</select>
+	
+	<!-- 자료디테일 업로드-->
+	<insert id="uploadFileDetail">
+		insert into filedetail values(#{filecode},#{content},#{fileName},#{uploadPath})
+	</insert>
+	
+	<!-- 자료 리스트 정보 가져오기 -->
+	<select id="getFileList" resultType="com.rm.model.FileVO">
+		select * from(select ROW_NUMBER() OVER (ORDER BY filecode DESC) AS rn,
+		roomcode, filecode, filetitle, fileuploaddate, filemember from file) a
+		 where roomcode = #{param1} and rn BETWEEN #{param2.start} AND #{param2.end} ORDER BY fileuploaddate desc
+	
+	</select>
+	
+	<!-- 자료 디테일 가져오기-->
+	<select id="getFileDetail" resultType="com.rm.model.FileVO">
+		select f1.filecode,roomcode,filetitle,fileuploaddate,filemember,content,fileName,uploadPath from file f1 join filedetail f2 on f1.filecode = f2.filecode where roomcode= #{param1} and f1.filecode = #{param2}
+	</select>
+	
+
+	<!-- 자료 삭제 -->
+	<select id="deleteFile">
+		delete from file where roomcode = #{param1} and filecode = #{param2}
+	</select>
+	
+	<insert id="updateFile">
+	    update file set filetitle = #{param1.filetitle} where filecode = #{param2};
+		update filedetail set content = #{param1.content} where filecode = #{param2}
+	</insert>
+	
+
+	<!-- 방 입장시 roommember에 삽입 -->
+	<insert id="insertRoomMember">
+		insert into roommember values(#{roomcode},#{id},#{roomlevel})
+	</insert>
+	
+	<!-- 신규 참여자인지 아닌지 판단하기 위한 모든 참여자 가져오기 -->
+	<select id="selectRoomMember" resultType="com.rm.model.RoomMemberVO">
+		select * from roommember
+	</select>
+	
+	<!-- 방 입장시 방 인원 수 증가 -->
+	<update id="updateMemberCnt">
+		update roomdetail set join_member_cnt = join_member_cnt + 1 where roomcode = #{roomcode}
+	</update>
+	
+	
+	<!-- 참여중인 방 -->
+	<select id="joinRoomList" resultType="com.rm.model.RoomVO">	
+	 SELECT *
+			FROM (
+			    SELECT 
+			        ROW_NUMBER() OVER (ORDER BY roomcode DESC) AS rn,
+			        r1.roomcode,
+			        type,
+			        r1.id,
+			        title,
+			        roompw,
+			        member_cnt,
+			        join_member_cnt,
+			        explanation,
+			        fileName,
+			        uploadPath,
+			        uuid
+			    FROM room r1
+			    JOIN roomdetail r2 ON r1.roomcode = r2.roomcode
+			    JOIN roommember r3 ON r1.roomcode = r3.roomcode
+			    JOIN room_image r4 ON r1.roomcode = r4.roomcode
+			    where r3.id = #{param1} AND r1.id !=#{param1} 
+			    ORDER BY roomcode DESC
+			) AS b
+			WHERE rn BETWEEN #{param2.start} AND #{param2.end};
+ 
+ </select>
+	
+	<!-- 참여중인 방의 수 -->
+	<select id="countJoinRoom" resultType="int">
+		select count(*) from room r1 join roomdetail r2 on r1.roomcode = r2.roomcode join roommember r3 on r1.roomcode = r3.roomcode join room_image r4 on r1.roomcode = r4.roomcode where r1.id != #{id} and r3.id =#{id}; 
+	</select>	
+	
+	
+	<!-- 내가 만든 방 -->
+	<select id="makeRoomList" resultType="com.rm.model.RoomVO">	
+	 SELECT *
+			FROM (
+			    SELECT 
+			        ROW_NUMBER() OVER (ORDER BY roomcode DESC) AS rn,
+			        r1.roomcode,
+			        type,
+			        r1.id,
+			        title,
+			        roompw,
+			        member_cnt,
+			        join_member_cnt,
+			        explanation,
+			        fileName,
+			        uploadPath,
+			        uuid
+			    FROM room r1
+			    JOIN roomdetail r2 ON r1.roomcode = r2.roomcode
+			    JOIN roommember r3 ON r1.roomcode = r3.roomcode
+			    JOIN room_image r4 ON r1.roomcode = r4.roomcode
+			    where r1.id =#{param1} and r3.id = #{param1}
+			    ORDER BY roomcode DESC
+			) AS b
+			WHERE rn BETWEEN #{param2.start} AND #{param2.end};
+ 	</select>
+ 	
+ 	<!-- 내가 만든 방의 수 -->
+	<select id="countMakeRoom" resultType="int">
+		select count(r1.roomcode) from room r1 join roomdetail r2 on r1.roomcode = r2.roomcode join roommember r3 on r1.roomcode = r3.roomcode join room_image r4 on r1.roomcode = r4.roomcode where r1.id = #{id} and r3.id = #{id}; 
+	</select>	
+
+	
+	<insert id="noticeEnroll">
+		insert into notice values (#{roomcode},#{noticecode},#{title},sysdate(), #{content}, #{writemember})
+	</insert>
+	
+	<!-- 회원 이름 가져오기 -->
+	<select id="selectName" resultType="String">
+		select name from member where id = #{id}
+	</select>
+	
+	<!-- 참여중인 회원 정보 가져오기 -->
+	<select id="roomMemberList" resultType="com.rm.model.MemberVO">
+		select m1.id,name,gender from member m1 join roommember m2 on m1.id = m2.id where m2.roomcode=#{roomcode}
+	</select>	
+	
+	<select id="countNotice" resultType="int">
+		SELECT COUNT(*) FROM NOTICE
+	</select>
+	
+	
+	<!-- 퀘스트 리스트 -->
+	<select id="question" resultType = "com.rm.model.QuestionVO">
+			select * from(select ROW_NUMBER() OVER (ORDER BY questioncode DESC) AS rn,
+		roomcode, questioncode, questiontitle, questiondate, questionmember,content from question) a
+		 where roomcode = #{param1} and rn BETWEEN #{param2.start} AND #{param2.end} ORDER BY questiondate desc
+	</select>
+	
+	
+	<insert id="insertQuestion">
+		
+		insert into question(roomcode,questiontitle,questiondate,questionmember,content) values(#{roomcode}, #{questiontitle}, sysdate(), #{questionmember},#{content})
+	
+	</insert>
+	
+	<select id="findQuestionCode" resultType="int">
+		select max(questioncode) from question
+	</select>
+	
+	
+	<!-- <insert id="insertQuestionDetail"> 
+	
+		insert into questiondetail values(#{questioncode},#{content}, #{answer}, sysdate(),#{answermember})
+	
+	</insert> -->
+	
+	<select id="getQuestionDetail" resultType = "com.rm.model.QuestionVO">
+			select * from question where roomcode=#{param1} and questioncode=#{param2}
+	</select>
+	
+	
+	<!--질문리스트의 수 -->
+	<select id="questionCount" resultType="int">
+		select count(*) from question where roomcode = #{roomcode}
+	</select>
+	
+	<insert id="updateQuestion">
+		update question set questiontitle = #{param1.questiontitle},content= #{param1.content} where questioncode = #{param2}
+	</insert>
+					
+	<select id="getNoticeList" resultType="com.rm.model.NoticeVO">
+    select * from(select ROW_NUMBER() OVER (ORDER BY noticecode DESC) AS rn,
+		roomcode, noticecode, title, content,writedate, writemember from notice) a
+		 where roomcode = #{param1} and rn BETWEEN #{param2.start} AND #{param2.end} ORDER BY writedate desc
+    </select>
+    
+    
+    <!-- 공지 디테일 -->
+    <select id="getNoticePage" resultType="com.rm.model.NoticeVO">
+    
+        select * from notice where noticecode = #{noticecode}
+    
+    </select>
+    
+    <!-- 공지 수정 -->
+	<update id="noticeModify">
+        <!-- MySQL -->
+        update notice set title = #{title}, content = #{content} where noticecode = #{noticecode} and roomcode=#{roomcode}
+    </update> 
+    
+	<!-- 방의 정보 수정 -->
+	<update id="updateRoom">
+		update roomdetail set roomcode = #{roomcode}, title=#{title}, roompw=#{roompw}, member_cnt=#{member_cnt}, join_member_cnt=#{join_member_cnt},explanation=#{explanation} where roomcode=#{roomcode}
+	</update>
+	
+	<!-- question 답변 등록 -->
+	<insert id="enrollQAnswer">
+		insert into answer values(#{param1}, #{param2}, #{param3}, sysdate() , #{param4})
+	</insert>
+	
+	<!-- question 답변 가져오기 -->
+	<select id="getAnswerList" resultType="com.rm.model.QuestionVO">
+		select * from answer where roomcode = #{param1} and questioncode = #{param2}
+	</select>
+
+
+	<delete id="deleteAnswer">
+		delete from answer where roomcode=#{param1} and questioncode=#{param2} and answer=#{param3}
+	</delete>
+</mapper>

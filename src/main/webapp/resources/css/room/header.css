@@ -1,0 +1,115 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+html{
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 400px;
+}
+button{
+    font-family: "Bagel Fat One", sans-serif;
+    font-weight: 400px;
+}
+
+.logo{
+	padding-top: 30px;
+    padding-left: 220px;
+    width: 180px;
+    height: 50px;
+}
+
+.find_room{
+	position: absolute;
+    top: 40px;
+    left: 450px;
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+
+}
+
+.find_room_click img{
+	width: 50px;
+	height: 50px;
+	
+}
+.find_room_click{
+	margin-left: 341px;
+    border: none;
+    background: white;
+}
+header{
+    height: 130px;
+    width: 100%;
+}
+
+  .mypage{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 70px;
+    left: 250px;
+    width: 250px;
+    height: 60px;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #ccc;
+    border-radius: 10px;
+  }
+  .mypage:before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: skyblue;
+    color: #fff;
+    transition: 0.5s;
+    transform-origin: bottom;
+    transform: translatey(-100%) rotatex(90deg);
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+  .mypage:hover:before
+  {
+    transform: translatey(0) rotatex(0deg);
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+  
+  .mypage:after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: skyblue;
+    color: #fff;
+    transition: 0.5s;
+    transform-origin: top;
+    transform: translatey(0) rotatex(0deg);
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+  .mypage:hover:after
+  {
+    transform: translatey(100%) rotatex(90deg);
+    border-radius: 10px;
+    border: 2px solid white;
+  }
+  
+  .logout{
+ 	border: none;
+ 	background-color: white;
+ 	color: red;
+ 	font-size: 32px;
+ 	padding-top: 30px;
+  }
+  
+  
