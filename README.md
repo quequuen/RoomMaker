@@ -5,7 +5,7 @@
 
 - 기간: 2023.11 ~ 2023. 12.
 - 내용: 공부, 연구 목적으로 자료 공유 시 기간과 용량 제한 없는 파일 공유 사이트
-- IDE: ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white), ![Sourcetree](https://img.shields.io/badge/Sourcetree-%0052CC.svg?style=for-the-badge&logo=openjdk&logoColor=white) <img src="https://img.shields.id/badge/sourcetree-0052CC?style=flat&amp;logo=sourcetree&amp;logocolor=white" alt="">, ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white), MyBatis
+- IDE: ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white), ![Sourcetree](https://img.shields.io/badge/Sourcetree-%0052CC.svg?style=for-the-badge&logo=openjdk&logoColor=white), ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white), MyBatis
 - 언어: ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white), ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E), ![Java](https://img.shields.io/badge/jsp-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white), ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white), ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 - 데이터베이스: ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 - 역할: 로그인/회원가입, 마이페이지, 자료 다운로드 및 공유, 질문 답변 등록, 프로젝트 발표
